@@ -1,0 +1,27 @@
+"```python
+class Fibonacci:
+    def __init__(self):
+        self.memo = {}
+
+    def dynamic_fibonacci(self, n):
+        if n in self.memo:
+            return self.memo[n]
+        if n <= 0:
+            return 0
+        elif n == 1:
+            return 1
+        else:
+            result = self.dynamic_fibonacci(n - 1) + self.dynamic_fibonacci(n - 2)
+            self.memo[n] = result
+            return result
+
+
+def main():
+    fib = Fibonacci()
+    n = int(input(""Enter a number to find its Fibonacci number: ""))
+    print(f""The Fibonacci of {n} is: {fib.dynamic_fibonacci(n)}"")
+
+
+if __name__ == ""__main__"":
+    main()
+```"
